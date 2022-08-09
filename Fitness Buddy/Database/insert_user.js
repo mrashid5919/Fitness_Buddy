@@ -17,4 +17,17 @@ catch(err)
 
 }
 }
-module.exports=create_user;
+
+async function getUserByuserName(USERNAME){
+     const sql = `SELECT * FROM USERS 
+                 WHERE USERNAME = :USERNAME`;
+     const binds ={
+         USERNAME: USERNAME
+     };
+     connection= await oracledb.getConnection(database.database);
+     const result = (await connection.execute(sql, binds)).rows;
+     return result[0];
+ }
+module.exports={create_user,
+     getUserByuserName
+}
