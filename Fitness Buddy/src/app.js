@@ -34,11 +34,6 @@ app.get("/",(req,res)=>{
     res.render('index')
 })
 
-/*app.get("/login",(req,res)=>{
-     res.render('login')
- })*/
-
-
 
 // app.get("/signup2",(req,res)=>{
 //     res.render('signup2')
