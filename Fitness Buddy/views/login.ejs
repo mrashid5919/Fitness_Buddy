@@ -32,8 +32,7 @@
                         We are The Fitness Team for you!
                       </h4>
                     </div>
-
-                    <form>
+                    <form action="/login" method="post">
                       <p>Please login to your account</p>
 
                       <div class="form-floating mb-4">
@@ -42,6 +41,7 @@
                           class="form-control"
                           id="userName"
                           placeholder="User name"
+                          name="username"
                         />
                         <label for="userName">User name</label>
                       </div>
@@ -52,6 +52,7 @@
                           class="form-control"
                           id="floatingPassword"
                           placeholder="Password"
+                          name="password"
                         />
                         <label for="floatingPassword">Password</label>
                       </div>
@@ -59,6 +60,7 @@
                       <div class="row">
                         <div class="mb-4">
                           <select
+                            name="choice"
                             class="form-select"
                             aria-label="Default select example"
                           >
