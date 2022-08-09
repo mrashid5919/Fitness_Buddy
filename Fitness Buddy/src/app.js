@@ -5,6 +5,7 @@ const bodyparser=require('body-parser');
 // CUSTOM module
 
 const signup_route= require('../route/signup');
+const login_route=require('../route/login');
 //const signup_route2= require('../route/signup2');
 // const config=require('../Database/config');
 
@@ -25,6 +26,7 @@ app.use(bodyparser.urlencoded({
     extended: true
   }));
 app.use('/',signup_route);
+app.use('/',login_route);
 
 
 app.get("/",(req,res)=>{
@@ -32,9 +34,9 @@ app.get("/",(req,res)=>{
     res.render('index')
 })
 
-app.get("/login",(req,res)=>{
+/*app.get("/login",(req,res)=>{
      res.render('login')
- })
+ })*/
 
 
 
