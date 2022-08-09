@@ -28,6 +28,19 @@ async function getUserByuserName(USERNAME){
      const result = (await connection.execute(sql, binds)).rows;
      return result[0];
  }
+
+async function getUserByemail(EMAIL)
+{
+     const sql = `SELECT * FROM USERS 
+                 WHERE EMAIL = :EMAIL`;
+     const binds ={
+         EMAIL: EMAIL
+     };
+     connection= await oracledb.getConnection(database.database);
+     const result = (await connection.execute(sql, binds)).rows;
+     return result[0];
+}
 module.exports={create_user,
-     getUserByuserName
+     getUserByuserName,
+     getUserByemail
 }
