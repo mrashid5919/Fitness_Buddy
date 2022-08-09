@@ -16,6 +16,7 @@
   </head>
 
   <body>
+    <h2 style="text-align: center" color="black"><%= errors %></h2>
     <section class="h-100 gradient-form" style="background-color: #eee">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -83,18 +84,21 @@
                           class="d-flex align-items-center justify-content-center pb-4"
                         >
                           <p class="mb-0 me-2">Don't have an account?</p>
-                          <button type="button" class="btn btn-outline-danger">
-                            Create new
-                          </button>
+                          <a
+                            class="btn btn-outline-dark"
+                            href="/signup"
+                            role="button"
+                            >Create new</a
+                          >
                         </div>
                       </div>
                     </form>
                   </div>
                 </div>
                 <div
-                  class="col-lg-6 d-flex align-items-center gradient-custom-2"
+                  class="col-lg-6 d-flex align-items-center "
                 >
-                  <img src="/images/login.jpg" style="width: 455px" alt="logo" />
+                  <img src="/images/login.jpg" style="width: 95%"  alt="logo" />
                 </div>
               </div>
             </div>
