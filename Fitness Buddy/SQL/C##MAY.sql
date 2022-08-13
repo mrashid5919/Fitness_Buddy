@@ -11,9 +11,34 @@
  Target Server Version : 190000
  File Encoding         : 65001
 
- Date: 12/08/2022 18:03:18
+ Date: 14/08/2022 00:42:35
 */
 
+
+-- ----------------------------
+-- Table structure for CONTAINS
+-- ----------------------------
+DROP TABLE "C##MAY"."CONTAINS";
+CREATE TABLE "C##MAY"."CONTAINS" (
+  "MEAL_ID" NUMBER VISIBLE,
+  "ITEM_ID" NUMBER VISIBLE,
+  "QUANTITY" NUMBER(6,2) VISIBLE
+)
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Records of CONTAINS
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for DIET_TYPE
@@ -48,6 +73,46 @@ INSERT INTO "C##MAY"."DIET_TYPE" VALUES ('0', '50', '25', '25');
 INSERT INTO "C##MAY"."DIET_TYPE" VALUES ('1', '10', '25', '65');
 INSERT INTO "C##MAY"."DIET_TYPE" VALUES ('2', '40', '35', '25');
 INSERT INTO "C##MAY"."DIET_TYPE" VALUES ('3', '55', '25', '20');
+
+-- ----------------------------
+-- Table structure for FOOD_ITEMS
+-- ----------------------------
+DROP TABLE "C##MAY"."FOOD_ITEMS";
+CREATE TABLE "C##MAY"."FOOD_ITEMS" (
+  "ITEM_ID" NUMBER VISIBLE NOT NULL,
+  "ITEM_NAME" VARCHAR2(255 BYTE) VISIBLE,
+  "CALORIE" NUMBER(6,2) VISIBLE,
+  "CARBS" NUMBER(6,2) VISIBLE,
+  "FAT" NUMBER(6,2) VISIBLE,
+  "PROTEIN" NUMBER(6,2) VISIBLE,
+  "VITAMIN_C" NUMBER(6,2) VISIBLE,
+  "IRON" NUMBER(6,2) VISIBLE,
+  "SODIUM" NUMBER(6,2) VISIBLE,
+  "SUGAR" NUMBER(6,2) VISIBLE,
+  "DIETARY_FIBER" NUMBER(6,2) VISIBLE,
+  "MEASURE_QUANTITY" NUMBER(6,2) VISIBLE,
+  "MEASURE_UNIT" VARCHAR2(100 BYTE) VISIBLE
+)
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Records of FOOD_ITEMS
+-- ----------------------------
+INSERT INTO "C##MAY"."FOOD_ITEMS" VALUES ('1', 'Boiled Rice', '170', '38', '0', '4', '0', '2.86', '3.16', '0.1', '1.42', '1', 'Cup');
 
 -- ----------------------------
 -- Table structure for GOALS
@@ -85,6 +150,39 @@ DISABLE ROW MOVEMENT
 -- Records of GOALS
 -- ----------------------------
 INSERT INTO "C##MAY"."GOALS" VALUES ('6', '1310.83', NULL, '9', '2', '1', '1', '2', '2', '0');
+INSERT INTO "C##MAY"."GOALS" VALUES ('22', '1561.89', NULL, '13', NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO "C##MAY"."GOALS" VALUES ('21', '1570.89', NULL, '9', '1', '1', '1', '1', '2', '1');
+
+-- ----------------------------
+-- Table structure for MEAL_LOGGER
+-- ----------------------------
+DROP TABLE "C##MAY"."MEAL_LOGGER";
+CREATE TABLE "C##MAY"."MEAL_LOGGER" (
+  "MEAL_ID" NUMBER VISIBLE NOT NULL,
+  "MEAL_TYPE" VARCHAR2(15 BYTE) VISIBLE,
+  "MEAL_DATE" DATE VISIBLE,
+  "USER_ID" NUMBER VISIBLE
+)
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Records of MEAL_LOGGER
+-- ----------------------------
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('1', 'B', TO_DATE('2022-08-13 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '21');
 
 -- ----------------------------
 -- Table structure for MICRO_CONDITIONS
@@ -164,6 +262,8 @@ DISABLE ROW MOVEMENT
 -- Records of USERS
 -- ----------------------------
 INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '83', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', 'abcd', '32.41', '1');
+INSERT INTO "C##MAY"."USERS" VALUES ('22', 'scorp65', 'Shafin', 'Sowdagor', '85', '68', '10-Nov-2000', 'M', 'sowdagorshafin@gmail.com', 'abcd', '28.49', '1');
+INSERT INTO "C##MAY"."USERS" VALUES ('21', 'chonky_mubash', 'Mubasshira', 'Musarrat', '48', '63', '31-Dec-2000', 'F', 'mubash@gmail.com', '1234', '18.75', NULL);
 
 -- ----------------------------
 -- Function structure for KHOJ
@@ -416,10 +516,22 @@ END;
 /
 
 -- ----------------------------
+-- Sequence structure for FOOD_ITEM_SEQUENCE
+-- ----------------------------
+DROP SEQUENCE "C##MAY"."FOOD_ITEM_SEQUENCE";
+CREATE SEQUENCE "C##MAY"."FOOD_ITEM_SEQUENCE" MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 CACHE 20;
+
+-- ----------------------------
 -- Sequence structure for MEAL_SEQUENCE
 -- ----------------------------
 DROP SEQUENCE "C##MAY"."MEAL_SEQUENCE";
 CREATE SEQUENCE "C##MAY"."MEAL_SEQUENCE" MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 CACHE 20;
+
+-- ----------------------------
+-- Sequence structure for MEAL_SEQUENCE1
+-- ----------------------------
+DROP SEQUENCE "C##MAY"."MEAL_SEQUENCE1";
+CREATE SEQUENCE "C##MAY"."MEAL_SEQUENCE1" MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 CACHE 20;
 
 -- ----------------------------
 -- Sequence structure for USER_SEQUENCE
@@ -431,6 +543,38 @@ CREATE SEQUENCE "C##MAY"."USER_SEQUENCE" MINVALUE 1 MAXVALUE 9999999999999999999
 -- Primary Key structure for table DIET_TYPE
 -- ----------------------------
 ALTER TABLE "C##MAY"."DIET_TYPE" ADD CONSTRAINT "SYS_C008068" PRIMARY KEY ("DIET");
+
+-- ----------------------------
+-- Primary Key structure for table FOOD_ITEMS
+-- ----------------------------
+ALTER TABLE "C##MAY"."FOOD_ITEMS" ADD CONSTRAINT "SYS_C008086" PRIMARY KEY ("ITEM_ID");
+
+-- ----------------------------
+-- Primary Key structure for table MEAL_LOGGER
+-- ----------------------------
+ALTER TABLE "C##MAY"."MEAL_LOGGER" ADD CONSTRAINT "SYS_C008100" PRIMARY KEY ("MEAL_ID");
+
+-- ----------------------------
+-- Triggers structure for table MEAL_LOGGER
+-- ----------------------------
+CREATE TRIGGER "C##MAY"."MEAL_TRIG" BEFORE INSERT ON "C##MAY"."MEAL_LOGGER" REFERENCING OLD AS "OLD" NEW AS "NEW" FOR EACH ROW 
+BEGIN
+IF :NEW.MEAL_ID IS NULL
+THEN
+:NEW.MEAL_ID:=MEAL_SEQUENCE.NEXTVAL;
+END IF;
+END;
+
+--SHOW ERRORS TRIGGER MEAL_TRIG;
+
+/*CREATE TABLE DIET_TYPE
+(
+DIET INTEGER,
+CARB INTEGER,
+PROTEIN INTEGER,
+FAT INTEGER,
+PRIMARY KEY (DIET)
+);*/;
 
 -- ----------------------------
 -- Primary Key structure for table MICRO_CONDITIONS
@@ -521,5 +665,15 @@ THEN
 END IF;
 END;
 
-
 --DROP SEQUENCE USER_SEQUENCE;
+
+-- ----------------------------
+-- Foreign Keys structure for table CONTAINS
+-- ----------------------------
+ALTER TABLE "C##MAY"."CONTAINS" ADD CONSTRAINT "SYS_C008102" FOREIGN KEY ("MEAL_ID") REFERENCES "C##MAY"."MEAL_LOGGER" ("MEAL_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+ALTER TABLE "C##MAY"."CONTAINS" ADD CONSTRAINT "SYS_C008103" FOREIGN KEY ("ITEM_ID") REFERENCES "C##MAY"."FOOD_ITEMS" ("ITEM_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+
+-- ----------------------------
+-- Foreign Keys structure for table MEAL_LOGGER
+-- ----------------------------
+ALTER TABLE "C##MAY"."MEAL_LOGGER" ADD CONSTRAINT "SYS_C008101" FOREIGN KEY ("USER_ID") REFERENCES "C##MAY"."USERS" ("USER_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
