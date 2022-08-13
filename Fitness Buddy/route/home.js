@@ -2,6 +2,7 @@ const router = require('express').Router();
 const DB_user = require('../Database/insert_user');
 const {verify} = require('../middlewares/user-verification');
 const DB_goal=require('../Database/user_goal');
+const DB_add=require('../Database/add');
 
 var use;
 
@@ -18,6 +19,28 @@ router.get('/food',verify,async (req,res)=>{
     const user = await DB_user.getUserByuserName(req.user[1]);
     res.render('food.ejs',{
         cur_user: user
+    })
+})
+
+router.get('/addfood',verify,async(req,res)=>{
+    const user = await DB_user.getUserByuserName(req.user[1]);
+    res.render('addfood.ejs',{
+        cur_user: user,
+        items:[]
+    })
+})
+
+router.post('/addfood',verify,async(req,res)=>{
+    const user=await DB_user.getUserByuserName(req.user[1]);
+    var food=req.body.item;
+    food='%'+food+'%';
+    //console.log(food);
+    let result=[];
+
+    result=await DB_add.findFood(food);
+    res.render('addfood.ejs',{
+        cur_user:user,
+        items: result
     })
 })
 
