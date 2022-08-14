@@ -1,0 +1,21 @@
+/*header*/
+h1 {
+  font-family: "Lemon", cursive;
+  font-size: 5rem;
+  line-height: 1.5;
+}
+
+#upper-container {
+  padding: 4% 15%;
+}
+#header-container {
+  padding: 0.5% 6%;
+}
+
+#home-upper-container {
+  padding: 5% 18%;
+}
+
+#home-header-row {
+  padding: 1% 0.5% 0.5% 30%;
+}
