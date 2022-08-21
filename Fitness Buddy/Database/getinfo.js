@@ -20,7 +20,7 @@ async function getMicros(userid,gender,op)
 {
     const sql=`
     BEGIN
-	KHOJ(:userid,:gender,:op,:res);
+	FIND_MICROS(:userid,:gender,:op,:res);
     END;`;
     const binds={
         userid: userid,
