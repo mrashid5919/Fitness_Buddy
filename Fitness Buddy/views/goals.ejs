@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Goals</title>
+      <link rel="stylesheet" href="css/styles.css" />
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    </head>
+  </head>
+
+  <body>
+
+    <div class="container-fluid" id="header-container">
+      <div class="row" >
+        <div class="col-lg-8">
+          <h3><img src="/images/logo.jpg" alt="" width="47" height="44" class="d-inline-block align-text-top">FitnessBuddy</h3>
+        </div>
+        <div class="col-lg-4">
+          <h6>Hi, <%=cur_user[1]%> <a href="/"
+            > <img src="images/logout.jpg" alt="logout" height="30px"></a> </h6> 
+             
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-5 px-5">
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/food">Food</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Exercise</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/goals">Goals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/profile">Profile</a>
+                </li>
+              </ul>
+            </div>
+            </div>
+            </nav>
+
+
+      <div class="container-fluid" id="home-upper-container" style="background-color:#ffffff;">
+
+        <div class="row" >
+          <div class="col-lg-10">
+              <div
+                class="card shadow-2-strong card-registration bg-dark bg-opacity-10"
+                style="border-radius: 15px"
+                
+              >
+              <div class="card-body">
+          <div class="row mt-4 mb-4" id="home-header-row">
+              <h4 class="align-items-center">Fill up your desire goals</h4>
+          
+          </div>
+          <hr>
+
+          <div class="row justify-content-center">
+
+            <div class="col-lg-9 mt-4">
+              <form action="/goals" method="post">
+                <div class="col-md-8 mb-4">
+                  <select
+                      name="diet"
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Your desired diet</option>
+                      <option value="0">Weight maintenance</option>
+                      <option value="1">Keto diet</option>
+                      <option value="2">Weight loss(Non keto)</option>
+                      <option value="3">Weight gain</option>
+                    </select>
+                </div>
+
+                <h6>Your Vitamin-C level:&nbsp;&nbsp;&nbsp;  
+                  <div class="form-check form-check-inline">
+                    
+                  <div class="form-check form-check-inline">
+                    
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="vitaminDeficient"
+                    value="0"
+                  />
+                  <label class="form-check-label" for="vitaminDeficient"
+                    >Deficient</label
+                  >
+                </div>
+                </div></h6>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="vitaminNormal"
+                    value="1"
+                  />
+                  <label class="form-check-label" for="vitaminNormal"
+                    >Normal</label
+                  >
+                </div>
+
+                <h6 class="mb-2 pb-1">Your Iron level:</h6>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions2"
+                      id="ironDeficient"
+                      value="0"
+                    />
+                    <label class="form-check-label" for="ironDeficient"
+                      >Deficient</label
+                    >
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions2"
+                      id="ironNormal"
+                      value="1"
+                    />
+                    <label class="form-check-label" for="ironNormal"
+                      >Normal</label
+                    >
+                  </div>
+
+                  <h6 class="mb-2 pb-1">Your Sodium Requirement:</h6>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions3"
+                      id="sodiumLow"
+                      value="2"
+                    />
+                    <label class="form-check-label" for="sodiumLow">Low</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions3"
+                      id="sodiumNormal"
+                      value="1"
+                    />
+                    <label class="form-check-label" for="sodiumNormal"
+                      >Normal</label
+                    >
+                  </div>
+
+                  <h6 class="mb-2 pb-1">Your Sugar Requirement:</h6>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions4"
+                      id="sugarLow"
+                      value="2"
+                    />
+                    <label class="form-check-label" for="sugarLow">Low</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions4"
+                      id="sugarNormal"
+                      value="1"
+                    />
+                    <label class="form-check-label" for="sugarNormal"
+                      >Normal</label
+                    >
+                  </div>
+
+                  <h6 class="mb-2 pb-1">Your Fiber Requirement:</h6>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions5"
+                      id="fiberLow"
+                      value="1"
+                    />
+                    <label class="form-check-label" for="fiberLow">Normal</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions5"
+                      id="fiberNormal"
+                      value="0"
+                    />
+                    <label class="form-check-label" for="fiberNormal"
+                      >High</label
+                    >
+                  </div>
+
+                  <div class="text-center mt-4 pt-2">
+                    <button class="btn btn-dark btn-lg" type="submit" name="submit">Submit</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+
+
+        
+           
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
