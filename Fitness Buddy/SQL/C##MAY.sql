@@ -11,9 +11,40 @@
  Target Server Version : 190000
  File Encoding         : 65001
 
- Date: 25/08/2022 01:42:22
+ Date: 29/08/2022 01:12:33
 */
 
+
+-- ----------------------------
+-- Table structure for CONSISTS
+-- ----------------------------
+DROP TABLE "C##MAY"."CONSISTS";
+CREATE TABLE "C##MAY"."CONSISTS" (
+  "ELOG_ID" NUMBER VISIBLE,
+  "EXERCISE_ID" NUMBER VISIBLE,
+  "EXERCISE_DURATION" NUMBER(6,2) VISIBLE
+)
+LOGGING
+NOCOMPRESS
+PCTFREE 10
+INITRANS 1
+STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
+  BUFFER_POOL DEFAULT
+)
+PARALLEL 1
+NOCACHE
+DISABLE ROW MOVEMENT
+;
+
+-- ----------------------------
+-- Records of CONSISTS
+-- ----------------------------
+INSERT INTO "C##MAY"."CONSISTS" VALUES ('1', '2', '15');
+INSERT INTO "C##MAY"."CONSISTS" VALUES ('2', '2', '10');
 
 -- ----------------------------
 -- Table structure for CONTAINS
@@ -47,16 +78,19 @@ INSERT INTO "C##MAY"."CONTAINS" VALUES ('43', '1', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('44', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('64', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('81', '8', '1');
+INSERT INTO "C##MAY"."CONTAINS" VALUES ('101', '7', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('62', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('67', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('23', '1', '0.5');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('23', '3', '2');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('41', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('66', '1', '0.5');
+INSERT INTO "C##MAY"."CONTAINS" VALUES ('122', '1', '0.8');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('42', '1', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('61', '1', '0.8');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('65', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('81', '1', '0.8');
+INSERT INTO "C##MAY"."CONTAINS" VALUES ('121', '3', '1');
 
 -- ----------------------------
 -- Table structure for DIET_TYPE
@@ -99,7 +133,8 @@ DROP TABLE "C##MAY"."EXERCISES";
 CREATE TABLE "C##MAY"."EXERCISES" (
   "EXERCISE_ID" NUMBER VISIBLE NOT NULL,
   "EXERCISE_NAME" VARCHAR2(255 BYTE) VISIBLE,
-  "CALORIE_BURN" NUMBER(6,2) VISIBLE,
+  "CALORIE_BURN" NUMBER(8,4) VISIBLE,
+  "QUANTITY" NUMBER VISIBLE,
   "UNIT" VARCHAR2(255 BYTE) VISIBLE
 )
 LOGGING
@@ -107,6 +142,10 @@ NOCOMPRESS
 PCTFREE 10
 INITRANS 1
 STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
   BUFFER_POOL DEFAULT
 )
 PARALLEL 1
@@ -117,6 +156,10 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of EXERCISES
 -- ----------------------------
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('1', 'Normal Walking (3 mph)', '1.23', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('2', 'Slow Walking (2.5 mph)', '1.05', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('3', 'Fast Walking (3.5 mph)', '1.51', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('4', 'Very Fast Walking (4.0 mph)', '1.75', '20', 'Minute');
 
 -- ----------------------------
 -- Table structure for EXERCISE_LOG
@@ -125,7 +168,6 @@ DROP TABLE "C##MAY"."EXERCISE_LOG";
 CREATE TABLE "C##MAY"."EXERCISE_LOG" (
   "ELOG_ID" NUMBER VISIBLE NOT NULL,
   "EXERCISE_DATE" DATE VISIBLE,
-  "EXERCISE_DURATION" NUMBER(6,2) VISIBLE,
   "USER_ID" NUMBER VISIBLE
 )
 LOGGING
@@ -133,6 +175,10 @@ NOCOMPRESS
 PCTFREE 10
 INITRANS 1
 STORAGE (
+  INITIAL 65536 
+  NEXT 1048576 
+  MINEXTENTS 1
+  MAXEXTENTS 2147483645
   BUFFER_POOL DEFAULT
 )
 PARALLEL 1
@@ -143,6 +189,8 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of EXERCISE_LOG
 -- ----------------------------
+INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('2', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '61');
+INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('1', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 
 -- ----------------------------
 -- Table structure for FOOD_ITEMS
@@ -241,10 +289,13 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of GOALS
 -- ----------------------------
-INSERT INTO "C##MAY"."GOALS" VALUES ('6', '1310.83', NULL, '9', '2', '1', '1', '2', '2', '0');
+INSERT INTO "C##MAY"."GOALS" VALUES ('6', '1310.83', '150', '9', '2', '1', '1', '2', '2', '0');
 INSERT INTO "C##MAY"."GOALS" VALUES ('43', '1606.85', NULL, '9', '0', '1', '1', '1', '2', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('22', '1561.89', NULL, '13', '0', '1', '1', '1', '1', '1');
+INSERT INTO "C##MAY"."GOALS" VALUES ('68', '1059.13', NULL, '9', '2', '1', '1', '1', '1', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('21', '1570.89', NULL, '9', '1', '1', '1', '1', '2', '1');
+INSERT INTO "C##MAY"."GOALS" VALUES ('62', '1614.97', NULL, '9', '2', '1', '1', '1', '1', '1');
+INSERT INTO "C##MAY"."GOALS" VALUES ('61', '1096.73', '150', '9', '0', '1', '0', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for MEAL_LOGGER
@@ -275,6 +326,8 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of MEAL_LOGGER
 -- ----------------------------
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('121', 'Lunch', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '61');
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('122', 'Dinner', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '61');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('1', 'Breakfast', TO_DATE('2022-08-13 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '21');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('63', 'Dinner', TO_DATE('2022-08-21 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '22');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('23', 'Breakfast', TO_DATE('2022-08-15 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
@@ -285,6 +338,7 @@ INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('44', 'Breakfast', TO_DATE('2022-08-1
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('61', 'Breakfast', TO_DATE('2022-08-21 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('64', 'Breakfast', TO_DATE('2022-08-22 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '22');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('81', 'Dinner', TO_DATE('2022-08-24 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '43');
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('101', 'Breakfast', TO_DATE('2022-08-26 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('62', 'Breakfast', TO_DATE('2022-08-21 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '22');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('65', 'Breakfast', TO_DATE('2022-08-22 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('66', 'Lunch', TO_DATE('2022-08-22 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
@@ -370,7 +424,10 @@ DISABLE ROW MOVEMENT
 INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '83', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', 'abcd', '32.41', '1');
 INSERT INTO "C##MAY"."USERS" VALUES ('43', 'zm_98', 'Alina', 'Zaman', '52', '62', '05-Apr-2000', 'F', 'alina@hotmail.com', 'abcd', '20.97', '0');
 INSERT INTO "C##MAY"."USERS" VALUES ('22', 'scorp65', 'Shafin', 'Sowdagor', '85', '68', '10-Nov-2000', 'M', 'sowdagorshafin@gmail.com', 'abcd', '28.49', '1');
+INSERT INTO "C##MAY"."USERS" VALUES ('68', 'isbu', 'Tasnia', 'Isbat', '52', '58', '22-Jan-2001', 'F', 'ti@gmail.com', 'abcd', '23.96', '1');
 INSERT INTO "C##MAY"."USERS" VALUES ('21', 'chonky_mubash', 'Mubasshira', 'Musarrat', '48', '63', '31-Dec-2000', 'F', 'mubash@gmail.com', '1234', '18.75', '0');
+INSERT INTO "C##MAY"."USERS" VALUES ('62', 'lara_6277', 'Lara', 'Khan', '52', '63', '19-Sep-2000', 'F', 'lara62@gmail.com', 'abcd', '20.31', '0');
+INSERT INTO "C##MAY"."USERS" VALUES ('61', 'mt_78', 'Mehreen', 'Tabassum', '55', '62', '14-Dec-2000', 'F', 'mehreen78@gmail.com', 'abcd', '22.18', '1');
 
 -- ----------------------------
 -- Function structure for FIND_MICROS
@@ -535,12 +592,12 @@ ALTER TABLE "C##MAY"."DIET_TYPE" ADD CONSTRAINT "SYS_C008068" PRIMARY KEY ("DIET
 -- ----------------------------
 -- Primary Key structure for table EXERCISES
 -- ----------------------------
-ALTER TABLE "C##MAY"."EXERCISES" ADD CONSTRAINT "SYS_C008178" PRIMARY KEY ("EXERCISE_ID");
+ALTER TABLE "C##MAY"."EXERCISES" ADD CONSTRAINT "SYS_C008191" PRIMARY KEY ("EXERCISE_ID");
 
 -- ----------------------------
 -- Primary Key structure for table EXERCISE_LOG
 -- ----------------------------
-ALTER TABLE "C##MAY"."EXERCISE_LOG" ADD CONSTRAINT "SYS_C008176" PRIMARY KEY ("ELOG_ID");
+ALTER TABLE "C##MAY"."EXERCISE_LOG" ADD CONSTRAINT "SYS_C008192" PRIMARY KEY ("ELOG_ID");
 
 -- ----------------------------
 -- Triggers structure for table EXERCISE_LOG
@@ -678,6 +735,12 @@ END;
 --DROP SEQUENCE USER_SEQUENCE;
 
 -- ----------------------------
+-- Foreign Keys structure for table CONSISTS
+-- ----------------------------
+ALTER TABLE "C##MAY"."CONSISTS" ADD CONSTRAINT "SYS_C008194" FOREIGN KEY ("ELOG_ID") REFERENCES "C##MAY"."EXERCISE_LOG" ("ELOG_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+ALTER TABLE "C##MAY"."CONSISTS" ADD CONSTRAINT "SYS_C008195" FOREIGN KEY ("EXERCISE_ID") REFERENCES "C##MAY"."EXERCISES" ("EXERCISE_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+
+-- ----------------------------
 -- Foreign Keys structure for table CONTAINS
 -- ----------------------------
 ALTER TABLE "C##MAY"."CONTAINS" ADD CONSTRAINT "SYS_C008102" FOREIGN KEY ("MEAL_ID") REFERENCES "C##MAY"."MEAL_LOGGER" ("MEAL_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
@@ -686,7 +749,7 @@ ALTER TABLE "C##MAY"."CONTAINS" ADD CONSTRAINT "SYS_C008103" FOREIGN KEY ("ITEM_
 -- ----------------------------
 -- Foreign Keys structure for table EXERCISE_LOG
 -- ----------------------------
-ALTER TABLE "C##MAY"."EXERCISE_LOG" ADD CONSTRAINT "SYS_C008177" FOREIGN KEY ("USER_ID") REFERENCES "C##MAY"."USERS" ("USER_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
+ALTER TABLE "C##MAY"."EXERCISE_LOG" ADD CONSTRAINT "SYS_C008193" FOREIGN KEY ("USER_ID") REFERENCES "C##MAY"."USERS" ("USER_ID") NOT DEFERRABLE INITIALLY IMMEDIATE NORELY VALIDATE;
 
 -- ----------------------------
 -- Foreign Keys structure for table MEAL_LOGGER
