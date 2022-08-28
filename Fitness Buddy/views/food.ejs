@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:wght@900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container-fluid" id="header-container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>
+            <img
+              src="images/logo.jpg"
+              alt=""
+              width="47"
+              height="44"
+              class="d-inline-block align-text-top"
+            />FitnessBuddy
+          </h3>
+        </div>
+        <div class="col-lg-4">
+          <h6>Hi, <%=cur_user[1]%> <a href="/"
+            > <img src="images/logout.jpg" alt="logout" height="30px"></a> </h6>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-5 px-5">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Exercise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/goals">Goals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="container-fluid"
+      id="home-upper-container"
+      style="background-color: #d2d6e2"
+    >
+      <div class="col-lg-8">
+        <div class="row mb-4">
+          <h5>Your Food Diary For:</h5>
+          <form action="/food" method="post"> 
+            <div class="form-outline datepicker w-100">
+              <input
+                type="date"
+                class="form-control form-control-lg"
+                id="currentDate"
+                name="date"
+              />
+            </div>
+
+            <div class="text-center mb-4">
+              <input
+                class="btn btn-dark"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+          </form>
+          
+        </div>
+
+        
+         
+        
+
+        <div class="row">
+          <div>
+            <h5>Breakfast</h5>
+            <table>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Calories</th>
+              <th>Carbs(g)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+              <th>Vitamin C(mg)</th>
+              <th>Iron(mg)</th>
+              <th>Sodium(mg)</th>
+              <th>Sugar(g)</th>
+              <th>Dietary Fiber(g)</th>
+              <% for(var i=0; i< dat.length; i++) {%>
+                <tr>
+                 <td> <%=dat[i][0]%> </td>
+                 <td> <%=dat[i][1]%> <%=dat[i][2]%></td>
+                 <% for(var j=3;j<12;j++) {%>
+                    <td> <%=dat[i][j]%> </td>
+                 <% } %>
+                </tr>
+             <% } %>
+            </table>
+            <hr />
+          </div>
+          <div>
+            <h5>Lunch</h5>
+            <table>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Calories</th>
+              <th>Carbs(g)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+              <th>Vitamin C(mg)</th>
+              <th>Iron(mg)</th>
+              <th>Sodium(mg)</th>
+              <th>Sugar(g)</th>
+              <th>Dietary Fiber(g)</th>
+              <% for(var i=0; i< dat1.length; i++) {%>
+                <tr>
+                 <td> <%=dat1[i][0]%> </td>
+                 <td> <%=dat1[i][1]%> <%=dat1[i][2]%></td>
+                 <% for(var j=3;j<12;j++) {%>
+                    <td> <%=dat1[i][j]%> </td>
+                 <% } %>
+                </tr>
+             <% } %>
+            </table>
+            <hr />
+          </div>
+          <div>
+            <h5>Dinner</h5>
+            <table>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Calories</th>
+              <th>Carbs(g)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+              <th>Vitamin C(mg)</th>
+              <th>Iron(mg)</th>
+              <th>Sodium(mg)</th>
+              <th>Sugar(g)</th>
+              <th>Dietary Fiber(g)</th>
+              <% for(var i=0; i< dat2.length; i++) {%>
+                <tr>
+                 <td> <%=dat2[i][0]%> </td>
+                 <td> <%=dat2[i][1]%> <%=dat2[i][2]%></td>
+                 <% for(var j=3;j<12;j++) {%>
+                    <td> <%=dat2[i][j]%> </td>
+                 <% } %>
+                </tr>
+             <% } %>
+            </table>
+            <hr />
+          </div>
+          <div>
+            <h5>Snacks</h5>
+            <table>
+              <th>Item Name</th>
+              <th>Quantity</th>
+              <th>Calories</th>
+              <th>Carbs(g)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+              <th>Vitamin C(mg)</th>
+              <th>Iron(mg)</th>
+              <th>Sodium(mg)</th>
+              <th>Sugar(g)</th>
+              <th>Dietary Fiber(g)</th>
+              <% for(var i=0; i< dat3.length; i++) {%>
+                <tr>
+                 <td> <%=dat3[i][0]%> </td>
+                 <td> <%=dat3[i][1]%> <%=dat3[i][2]%></td>
+                 <% for(var j=3;j<12;j++) {%>
+                    <td> <%=dat3[i][j]%> </td>
+                 <% } %>
+                </tr>
+             <% } %>
+            </table>
+            <hr />
+          </div>
+          <table>
+            <tr>
+              <th scope="row">Eaten</th>
+              <% for(var i=0;i<cur_eaten.length;i++) {%>
+                <td> <%=cur_eaten[i]%></td>
+              <% } %>
+            </tr>
+            <tr>
+              <th scope="row">Goal</th>
+              <% for(var i=0;i<cur_total.length;i++) {%>
+                <td> <%=cur_total[i]%></td>
+              <% } %>
+            </tr>
+            <tr>
+              <th scope="row">Remaining</th>
+              <% for(var i=0;i<cur_remain.length;i++) {%>
+                <td> <%=cur_remain[i]%></td>
+              <% } %>
+            </tr>
+            <th></th>
+              <th>Calories</th>
+              <th>Carbs(g)</th>
+              <th>Fat(g)</th>
+              <th>Protein(g)</th>
+              <th>Vitamin C(mg)</th>
+              <th>Iron(mg)</th>
+              <th>Sodium(mg)</th>
+              <th>Sugar(g)</th>
+              <th>Dietary Fiber(g)</th>
+          </table>
+        </div>
+        <p>* <%=cur_done%> calories gained from exercise</p>
+      </div>
+    </div>
+  </body>
+</html>
