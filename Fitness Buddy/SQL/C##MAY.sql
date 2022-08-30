@@ -11,7 +11,7 @@
  Target Server Version : 190000
  File Encoding         : 65001
 
- Date: 31/08/2022 05:07:30
+ Date: 31/08/2022 05:38:05
 */
 
 
@@ -732,6 +732,25 @@ END;
 -- Primary Key structure for table FOOD_ITEMS
 -- ----------------------------
 ALTER TABLE "C##MAY"."FOOD_ITEMS" ADD CONSTRAINT "SYS_C008086" PRIMARY KEY ("ITEM_ID");
+
+-- ----------------------------
+-- Triggers structure for table GOALS
+-- ----------------------------
+CREATE TRIGGER "C##MAY"."DIET_UPDATE" AFTER UPDATE OF "DIET_TYPE" ON "C##MAY"."GOALS" REFERENCING OLD AS "OLD" NEW AS "NEW" FOR EACH ROW 
+DECLARE T INTEGER;
+BEGIN
+IF :NEW.DIET_TYPE=1 THEN
+	T:=1;
+ELSIF :NEW.DIET_TYPE=2 THEN
+	T:=1;
+ELSIF :NEW.DIET_TYPE=0 THEN
+	T:=0;
+ELSE
+	T:=2;
+END IF;
+UPDATE USERS SET DESIRE=T WHERE USER_ID=:NEW.USER_ID;
+END;
+/
 
 -- ----------------------------
 -- Primary Key structure for table MEAL_LOGGER
