@@ -11,7 +11,7 @@
  Target Server Version : 190000
  File Encoding         : 65001
 
- Date: 31/08/2022 05:38:05
+ Date: 31/08/2022 07:47:49
 */
 
 
@@ -165,6 +165,28 @@ INSERT INTO "C##MAY"."EXERCISES" VALUES ('1', 'Normal Walking (3 mph)', '1.23', 
 INSERT INTO "C##MAY"."EXERCISES" VALUES ('2', 'Slow Walking (2.5 mph)', '1.05', '20', 'Minute');
 INSERT INTO "C##MAY"."EXERCISES" VALUES ('3', 'Fast Walking (3.5 mph)', '1.51', '20', 'Minute');
 INSERT INTO "C##MAY"."EXERCISES" VALUES ('4', 'Very Fast Walking (4.0 mph)', '1.75', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('5', 'Medium Running (Jogging) 10.7 kmph', '3.66', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('6', 'Slow Running (Jogging) 8 kmph', '2.66', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('7', 'Fast Running (Jogging) 16 kmph', '5.54', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('8', 'Yoga', '1.3', '30', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('9', 'Core Power Yoga', '1.73', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('10', 'Swimming, Freestyle, Light Effort', '2.43', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('11', 'Swimming, Freestyle, Fast Effort', '3.46', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('12', 'Mild Stretching', '0.44', '15', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('13', 'Push ups (20 per min)', '0.08', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('14', 'Sit ups (20 per min)', '0.04', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('15', 'Skipping (100 per min)', '0.16', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('16', 'Plank (Hold 1 min)', '0.17', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('17', 'Squats', '0.1', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('18', 'Jumping Jacks', '0.13', '1', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('19', 'Aerobics (Low Impact)', '1.65', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('20', 'Aerobics (High Impact)', '2.1', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('21', 'Basketball', '2.4', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('22', 'Elliptical Trainer (General)', '2.7', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('23', 'Football ', '2.7', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('24', 'Bicycling, stationary: moderate', '2.1', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('25', 'Bicycling, stationary: vigorous', '3.15', '20', 'Minute');
+INSERT INTO "C##MAY"."EXERCISES" VALUES ('26', 'Treadmill', '1.3', '30', 'Minute');
 
 -- ----------------------------
 -- Table structure for EXERCISE_LOG
@@ -496,7 +518,7 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of USERS
 -- ----------------------------
-INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '80', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', 'abcd', '32.41', '1', '83');
+INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '80', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', 'abcd', '31.24', '1', '83');
 INSERT INTO "C##MAY"."USERS" VALUES ('43', 'zm_98', 'Alina', 'Zaman', '52', '62', '05-Apr-2000', 'F', 'alina@hotmail.com', 'abcd', '20.97', '0', '52');
 INSERT INTO "C##MAY"."USERS" VALUES ('22', 'scorp65', 'Shafin', 'Sowdagor', '85', '68', '10-Nov-2000', 'M', 'sowdagorshafin@gmail.com', 'abcd', '28.49', '1', '85');
 INSERT INTO "C##MAY"."USERS" VALUES ('70', 'disha', 'Majisha', 'Jahan', '75', '68', '13-March-1999', 'F', 'majisha@gmail.com', '1234', '25.14', '1', '75');
@@ -533,7 +555,7 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of WATER_CONSUMPTION
 -- ----------------------------
-INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('6', '2', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
+INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('6', '3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
 INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('43', '3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
 
 -- ----------------------------
