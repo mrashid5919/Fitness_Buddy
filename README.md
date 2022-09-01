@@ -70,16 +70,6 @@ Make sure you have node and oracle installed in your device.
 
 8. If no errors are shown, then we are good to go!
 
-#### Run the project
-
-Go to your favourite code editor and run
-
-```sh
-npm run dev
-```
-
-You should find that the project is working!
-
 ## Contributors
 
 - **Mayesha Rashid** - 1905103
