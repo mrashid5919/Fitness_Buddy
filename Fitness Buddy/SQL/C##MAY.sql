@@ -11,7 +11,7 @@
  Target Server Version : 190000
  File Encoding         : 65001
 
- Date: 31/08/2022 07:47:49
+ Date: 01/09/2022 10:41:52
 */
 
 
@@ -44,6 +44,7 @@ DISABLE ROW MOVEMENT
 -- Records of CONSISTS
 -- ----------------------------
 INSERT INTO "C##MAY"."CONSISTS" VALUES ('1', '2', '15');
+INSERT INTO "C##MAY"."CONSISTS" VALUES ('4', '7', '5');
 INSERT INTO "C##MAY"."CONSISTS" VALUES ('2', '2', '10');
 INSERT INTO "C##MAY"."CONSISTS" VALUES ('3', '2', '10');
 
@@ -89,12 +90,14 @@ INSERT INTO "C##MAY"."CONTAINS" VALUES ('23', '3', '2');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('41', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('66', '1', '0.5');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('122', '1', '0.8');
+INSERT INTO "C##MAY"."CONTAINS" VALUES ('128', '45', '0.5');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('42', '1', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('61', '1', '0.8');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('65', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('81', '1', '0.8');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('121', '3', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('123', '8', '1');
+INSERT INTO "C##MAY"."CONTAINS" VALUES ('129', '26', '1');
 INSERT INTO "C##MAY"."CONTAINS" VALUES ('124', '5', '1');
 
 -- ----------------------------
@@ -218,6 +221,7 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('2', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '61');
 INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
+INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('4', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '72');
 INSERT INTO "C##MAY"."EXERCISE_LOG" VALUES ('1', TO_DATE('2022-08-28 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 
 -- ----------------------------
@@ -380,13 +384,16 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of GOALS
 -- ----------------------------
-INSERT INTO "C##MAY"."GOALS" VALUES ('6', '1287.68', '150', '9', '2', '1', '1', '2', '2', '0');
+INSERT INTO "C##MAY"."GOALS" VALUES ('72', '1632.49', '100', '9', '0', '1', '1', '1', '1', '1');
+INSERT INTO "C##MAY"."GOALS" VALUES ('6', '1318.28', '150', '9', '2', '1', '1', '2', '2', '0');
+INSERT INTO "C##MAY"."GOALS" VALUES ('73', '1596.9', '100', '9', '0', '1', '0', '1', '1', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('43', '1606.85', '100', '9', '0', '1', '1', '1', '1', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('22', '1561.89', '150', '13', '0', '1', '1', '1', '1', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('70', '1265.71', '150', '9', '2', '1', '1', '1', '2', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('68', '1059.13', '100', '9', '2', '1', '1', '1', '1', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('21', '1570.89', '150', '9', '1', '1', '1', '1', '2', '1');
 INSERT INTO "C##MAY"."GOALS" VALUES ('62', '1614.97', '150', '9', '2', '1', '1', '1', '1', '1');
+INSERT INTO "C##MAY"."GOALS" VALUES ('74', '2011.81', NULL, '9', NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO "C##MAY"."GOALS" VALUES ('61', '1096.73', '150', '9', '0', '1', '0', '1', '1', '1');
 
 -- ----------------------------
@@ -424,6 +431,7 @@ INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('1', 'Breakfast', TO_DATE('2022-08-13
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('126', 'Dinner', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('123', 'Breakfast', TO_DATE('2022-08-30 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('124', 'Lunch', TO_DATE('2022-08-30 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('129', 'Breakfast', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('63', 'Dinner', TO_DATE('2022-08-21 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '22');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('23', 'Breakfast', TO_DATE('2022-08-15 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('42', 'Lunch', TO_DATE('2022-08-18 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
@@ -439,6 +447,7 @@ INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('62', 'Breakfast', TO_DATE('2022-08-2
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('65', 'Breakfast', TO_DATE('2022-08-22 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('66', 'Lunch', TO_DATE('2022-08-22 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '6');
 INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('67', 'Breakfast', TO_DATE('2022-08-24 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '43');
+INSERT INTO "C##MAY"."MEAL_LOGGER" VALUES ('128', 'Lunch', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'), '72');
 
 -- ----------------------------
 -- Table structure for MICRO_CONDITIONS
@@ -518,13 +527,16 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of USERS
 -- ----------------------------
-INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '80', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', 'abcd', '31.24', '1', '83');
+INSERT INTO "C##MAY"."USERS" VALUES ('6', 'mr_5919', 'Mayesha', 'Rashid', '84', '63', '15-Nov-1999', 'F', 'mayesha1599@gmail.com', '1234', '32.8', '1', '83');
+INSERT INTO "C##MAY"."USERS" VALUES ('72', 'abcd', 'ab', 'cd', '54', '63', '02-Oct-1999', 'F', 'abcd@gmail.com', '1234', '21.09', '0', '52');
 INSERT INTO "C##MAY"."USERS" VALUES ('43', 'zm_98', 'Alina', 'Zaman', '52', '62', '05-Apr-2000', 'F', 'alina@hotmail.com', 'abcd', '20.97', '0', '52');
+INSERT INTO "C##MAY"."USERS" VALUES ('73', 'sadia', 'Sadia', 'Tabassum', '52', '60', '07-Jul-2000', 'F', 'sadia@gmail.com', 'abcd', '22.39', '0', '52');
 INSERT INTO "C##MAY"."USERS" VALUES ('22', 'scorp65', 'Shafin', 'Sowdagor', '85', '68', '10-Nov-2000', 'M', 'sowdagorshafin@gmail.com', 'abcd', '28.49', '1', '85');
 INSERT INTO "C##MAY"."USERS" VALUES ('70', 'disha', 'Majisha', 'Jahan', '75', '68', '13-March-1999', 'F', 'majisha@gmail.com', '1234', '25.14', '1', '75');
 INSERT INTO "C##MAY"."USERS" VALUES ('68', 'isbu', 'Tasnia', 'Isbat', '52', '58', '22-Jan-2001', 'F', 'ti@gmail.com', 'abcd', '23.96', '1', '52');
 INSERT INTO "C##MAY"."USERS" VALUES ('21', 'chonky_mubash', 'Mubasshira', 'Musarrat', '48', '63', '31-Dec-2000', 'F', 'mubash@gmail.com', '1234', '18.75', '0', '48');
 INSERT INTO "C##MAY"."USERS" VALUES ('62', 'lara_6277', 'Lara', 'Khan', '52', '63', '19-Sep-2000', 'F', 'lara62@gmail.com', 'abcd', '20.31', '0', '52');
+INSERT INTO "C##MAY"."USERS" VALUES ('74', 'tasfia26', 'Tasfia', 'Negar', '48', '61', '01-Jan-1992', 'F', 'tasfia@gmail.com', 'abc', '19.99', '2', '48');
 INSERT INTO "C##MAY"."USERS" VALUES ('61', 'mt_78', 'Mehreen', 'Tabassum', '55', '62', '14-Dec-2000', 'F', 'mehreen78@gmail.com', 'abcd', '22.18', '1', '55');
 
 -- ----------------------------
@@ -555,7 +567,8 @@ DISABLE ROW MOVEMENT
 -- ----------------------------
 -- Records of WATER_CONSUMPTION
 -- ----------------------------
-INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('6', '3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
+INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('6', '4', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
+INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('72', '3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
 INSERT INTO "C##MAY"."WATER_CONSUMPTION" VALUES ('43', '3', TO_DATE('2022-08-31 00:00:00', 'SYYYY-MM-DD HH24:MI:SS'));
 
 -- ----------------------------
@@ -756,25 +769,6 @@ END;
 -- Primary Key structure for table FOOD_ITEMS
 -- ----------------------------
 ALTER TABLE "C##MAY"."FOOD_ITEMS" ADD CONSTRAINT "SYS_C008086" PRIMARY KEY ("ITEM_ID");
-
--- ----------------------------
--- Triggers structure for table GOALS
--- ----------------------------
-CREATE TRIGGER "C##MAY"."DIET_UPDATE" AFTER UPDATE OF "DIET_TYPE" ON "C##MAY"."GOALS" REFERENCING OLD AS "OLD" NEW AS "NEW" FOR EACH ROW 
-DECLARE T INTEGER;
-BEGIN
-IF :NEW.DIET_TYPE=1 THEN
-	T:=1;
-ELSIF :NEW.DIET_TYPE=2 THEN
-	T:=1;
-ELSIF :NEW.DIET_TYPE=0 THEN
-	T:=0;
-ELSE
-	T:=2;
-END IF;
-UPDATE USERS SET DESIRE=T WHERE USER_ID=:NEW.USER_ID;
-END;
-/
 
 -- ----------------------------
 -- Primary Key structure for table MEAL_LOGGER
