@@ -1,4 +1,4 @@
-# Fitness_Buddy
+# Fitness Buddy
 A Daily calorie intake and burn tracker website which helps you select your goals according to your desires.
 
 ### Built With
