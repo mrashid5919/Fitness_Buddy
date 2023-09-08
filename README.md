@@ -64,9 +64,11 @@ Make sure you have node and oracle installed in your device.
 
 4. Find file dump.sql in `sql/C##MAY.sql`
 
-6. Head over to your favourite database GUI and connect C##MAY with that
+5. Head over to your favourite database GUI and connect C##MAY with that
 
-7. Import data from sql file depending upon the GUI. 
+6. Import data from sql file depending upon the GUI.
+   
+7. Copy the triggers from Triggers.sql and run them.
 
 8. If no errors are shown, then we are good to go!
 
